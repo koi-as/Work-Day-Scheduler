@@ -14,7 +14,9 @@ This webpage is rather straight forward. It works like a normal schedule that di
 To use this scheduler, all the user needs to do is click on one of the text areas and type in whatever they like. <br/>
 Then, after they have typed in something, they should click the blue save button that corresponds to the block of time that they want to save that information to. <br/>
 Finally, all they need to do is wait. When the time for the scheduled item comes up, it will change the highlight for that time from green to red, indicating that it is now the present. Below is a picture that displays concept this in action: <br/>
-![Workday Schedule Example](./assests/images/workdayScheduler.png)
+![Workday Schedule Example](./assests/images/workdayScheduler.png) 
+<br/>
+Here is a link to the deployed application: https://koi-as.github.io/Work-Day-Scheduler/ 
 
 ## Credits
 
