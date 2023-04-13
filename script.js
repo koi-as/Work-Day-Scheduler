@@ -1,6 +1,19 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+
+
+// var hour9 = $('#hour-9')
+// var hour10 = $('#hour-10')
+// var hour11 = $('#hour-11')
+// var hour12 = $('#hour-12')
+// var hour13 = $('#hour-13')
+// var hour14 = $('#hour-14')
+
+
+
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -11,13 +24,30 @@ $(function () {
   var saveBtn = $('.saveBtn');
   var inputArea = $('#textInput');
   
-  saveBtn.parent(this).on('click', updateInputArea)
-    //fil out function
-    inputArea.text(localStorage.getItem('content'));
 
-    function updateInputArea() {
-      localStorage.setItem('content', inputArea.val())
-    }
+  // console.log(saveBtn);
+  // console.log(inputArea);
+  // console.log(saveBtn.parent(this));
+  console.log(hour10);
+
+  var hour9 = $('#hour-9')
+  var hour10 = $('#hour-10')
+  
+
+  function updateInputArea(event) {
+    // var btnClick = $(event.target)
+    
+
+    localStorage.setItem('content', inputArea.val())
+    console.log(localStorage)
+  }
+
+  saveBtn.on('click', updateInputArea)
+
+
+
+
+
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
