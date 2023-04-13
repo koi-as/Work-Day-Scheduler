@@ -7,7 +7,7 @@
 
 // $(document).ready(function () {}) waits for the HTML to load before calling the function
 $(document).ready(function () {
-  // Saves the content of the time block to local storage // * * *   * -   * * * -   * //
+  // Saves the content of the time block to local storage // ***  *-  ***-  * //
   var saveBtn = $('.saveBtn');
   var hour9Input = $('#hour-9 .description');
   var hour10Input = $('#hour-10 .description');
@@ -19,6 +19,7 @@ $(document).ready(function () {
   var hour16Input = $('#hour-16 .description');
   var hour17Input = $('#hour-17 .description');
 
+  saveBtn.on('click', updateInputArea)
   function updateInputArea() {
     localStorage.setItem('hour9content', hour9Input.val())
     localStorage.setItem('hour10content', hour10Input.val())
@@ -32,8 +33,7 @@ $(document).ready(function () {
     console.log(localStorage)
   }
 
-  // Gets the content users saved into the timeblock // - - *   *   - //
-  saveBtn.on('click', updateInputArea)
+  // Gets the content users saved into the timeblock // --*  *  - //
   hour9Input.text(localStorage.getItem('hour9content'));
   hour10Input.text(localStorage.getItem('hour10content'));
   hour11Input.text(localStorage.getItem('hour11content'));
@@ -44,11 +44,7 @@ $(document).ready(function () {
   hour16Input.text(localStorage.getItem('hour16content'));
   hour17Input.text(localStorage.getItem('hour17content'));
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+  // Sets the time block display to match the hour of the day // -**  **  ***  *--*  *-**  *-  -*-- //
   var currentHour = dayjs().format('HH');
   var hour9 = $('#hour-9');
   var hour10 = $('#hour-10');
@@ -190,7 +186,7 @@ $(document).ready(function () {
   console.log(currentHour)
   timeBlockDisplay()
 
-  // Displays the current date onto the webpage // - * *   * -   -   * //
+  // Displays the current date onto the webpage // -**  *-  -  * //
   var dateEl = $('#currentDay')
   var today = dayjs();
 
