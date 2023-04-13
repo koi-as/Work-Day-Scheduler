@@ -2,19 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-
-
-// var hour9 = $('#hour-9')
-// var hour10 = $('#hour-10')
-// var hour11 = $('#hour-11')
-// var hour12 = $('#hour-12')
-// var hour13 = $('#hour-13')
-// var hour14 = $('#hour-14')
-
-
-
-
-$(function () {
+$(document).ready(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -22,32 +10,39 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   var saveBtn = $('.saveBtn');
-  var inputArea = $('#textInput');
-  
+  var hour9Input = $('#hour-9 .description');
+  var hour10Input = $('#hour-10 .description');
+  var hour11Input = $('#hour-11 .description');
+  var hour12Input = $('#hour-12 .description');
+  var hour13Input = $('#hour-13 .description');
+  var hour14Input = $('#hour-14 .description');
+  var hour15Input = $('#hour-15 .description');
+  var hour16Input = $('#hour-16 .description');
+  var hour17Input = $('#hour-17 .description');
 
-  // console.log(saveBtn);
-  // console.log(inputArea);
-  // console.log(saveBtn.parent(this));
-  console.log(hour10);
-
-  var hour9 = $('#hour-9')
-  var hour10 = $('#hour-10')
-  
-
-  function updateInputArea(event) {
-    // var btnClick = $(event.target)
-    
-
-    localStorage.setItem('content', inputArea.val())
+  function updateInputArea() {
+    localStorage.setItem('hour9content', hour9Input.val())
+    localStorage.setItem('hour10content', hour10Input.val())
+    localStorage.setItem('hour11content', hour11Input.val())
+    localStorage.setItem('hour12content', hour12Input.val())
+    localStorage.setItem('hour13content', hour13Input.val())
+    localStorage.setItem('hour14content', hour14Input.val())
+    localStorage.setItem('hour15content', hour15Input.val())
+    localStorage.setItem('hour16content', hour16Input.val())
+    localStorage.setItem('hour17content', hour17Input.val())
     console.log(localStorage)
   }
 
   saveBtn.on('click', updateInputArea)
-
-
-
-
-
+  hour9Input.text(localStorage.getItem('hour9content'));
+  hour10Input.text(localStorage.getItem('hour10content'));
+  hour11Input.text(localStorage.getItem('hour11content'));
+  hour12Input.text(localStorage.getItem('hour12content'));
+  hour13Input.text(localStorage.getItem('hour13content'));
+  hour14Input.text(localStorage.getItem('hour14content'));
+  hour15Input.text(localStorage.getItem('hour15content'));
+  hour16Input.text(localStorage.getItem('hour16content'));
+  hour17Input.text(localStorage.getItem('hour17content'));
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -65,7 +60,7 @@ $(function () {
   // attribute of each time-block be used to do this?
 
 
-  // TODO: Add code to display the current date in the header of the page.
+  // Displays the current date onto the webpage // - * *   * -   -   * //
   var dateEl = $('#currentDay')
   var today = dayjs();
 
